@@ -26,7 +26,7 @@ if ! (curl --silent --head http://www.google.com/  | egrep "20[0-9] Found|30[0-9
 fi
 
 ## Variables -----------------------------------------------------------------
-export REPO_URL=${REPO_URL:-"https://raw.githubusercontent.com/GeorgeL1/openstack-deployment/develop"}
+export REPO_URL=${REPO_URL:-"https://raw.githubusercontent.com/GeorgeL1/openstack-deployment/master"}
 
 # Infrastructure configuration
 export COM_HOST=${COM_HOST:-"computenode"}
