@@ -17,11 +17,13 @@
 ## Variables -----------------------------------------------------------------
 
 LINE='-----------------------------------------------------------------------'
-FORKS=${FORKS:-25}
 MAX_RETRIES=${MAX_RETRIES:-5}
 REPORT_DATA=${REPORT_DATA:-""}
 STARTTIME="${STARTTIME:-$(date +%s)}"
-ANSIBLE_PARAMETERS=${ANSIBLE_PARAMETERS:-""}
+ANSIBLE_PARAMETERS=${ANSIBLE_PARAMETERS:-"-e @/etc/rpc_deploy/user_variables.yml"}
+
+# the number of forks is set as the number of CPU's present 
+FORKS=${FORKS:-$(grep -c ^processor /proc/cpuinfo)} 
 
 # Override the current HOME directory
 export HOME="/root"
